@@ -8,7 +8,7 @@ QCMW (Qwoyn Caps Manager Wallet) is Qwoyns Ethereum wallet built using the Ionic
 Using the ConsenSys library (eth-lightwallet), our app can manage key-pairs securely on an android mobile device without sending any 
 passwords out of the wallet. This means that every transaction is signed directly by the users mobile device and sent to an ethereum node.
 
-With QCMW you could:
+QCMW Features:
 
 - Create an HD ligthwallet 
 - Manage an Ethereum wallet address
@@ -28,7 +28,7 @@ With QCMW you could:
 - Run DAppLeth (Decentralized external dapps embedded at runtime)
 
 # Beta Testers
-Become a BETA tester, install the App and help the community to grow up.
+Become a BETA tester, install the App and help the community grow.
 Visit <a href="http://www.qwoyn.io/testers">Qwoyns website</a> or
 Contact to us on <a href="https://discord.gg/knZBudV">Discord</a>
 
