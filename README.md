@@ -62,7 +62,7 @@ ionic serve
 ```
 
 # Screenshots
-<img src="https://www.inzhoop.com/img/screenshots/IMG_0010.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" width="30%">  
+<img src="https://qwoyn.io/wp-content/uploads/2018/09/icon.png" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" width="30%">  
 
 <img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%">
 
