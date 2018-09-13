@@ -76,12 +76,11 @@ ionic serve
 ```
 
 ## Screenshots
-<img src="https://i.imgur.com/XG020Y7.jpg" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" width="30%" height="500">  
+<img src="https://i.imgur.com/XG020Y7.jpg" width="30%" height="500">  <img src="https://i.imgur.com/iRC6oND.png" width="30%" height="500">  <img src="https://i.imgur.com/9KwS2PB.png" width="30%" height="500">  
 
-<img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%" height="500">
+<img src="https://i.imgur.com/eVwvzoB.png" width="30%" height="500">  <img src="https://i.imgur.com/hL4scn1.png" width="30%" height="500">  <img src="https://i.imgur.com/4mlguCi.png" width="30%" height="500">
 
-<img src="https://www.inzhoop.com/img/screenshots/IMG_0016.PNG" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0017.PNG" width="30%" height="500">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0018.PNG" width="30%" height="500">
-
+<img src="https://i.imgur.com/YPSAjqq.png" width="30%" height="500">  
 ## License
  GNU GENERAL PUBLIC LICENSE 3.0
  
