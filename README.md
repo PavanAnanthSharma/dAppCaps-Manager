@@ -61,7 +61,12 @@ https://nodejs.org/dist/v4.2.3/node-v4.2.3.pkg
 
 Install ionic and cordova
 ```bash
-sudo npm install -g cordova ionic
+npm install -g cordova ionic
+```
+
+Make sure the ionic/v1-toolkit is installed via npm
+```bash
+npm i -D -E @ionic/v1-toolkit
 ```
 
 You can then run the ionic server and test on your browser using 
