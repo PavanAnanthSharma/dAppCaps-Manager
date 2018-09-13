@@ -62,9 +62,9 @@ ionic serve
 ```
 
 # Screenshots
-<img src="https://i.imgur.com/XG020Y7.jpg" height="110%" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" width="30%">  
+<img src="https://i.imgur.com/XG020Y7.jpg" height="110%"; width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" width="30%">  
 
-<img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%">
+<img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" height="110%", width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%">
 
 <img src="https://www.inzhoop.com/img/screenshots/IMG_0016.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0017.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0018.PNG" width="30%">
 
