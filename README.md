@@ -64,7 +64,7 @@ ionic serve
 # Screenshots
 <img src="https://i.imgur.com/XG020Y7.jpg" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0011.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0012.PNG" height="80%" width="30%">  
 
-<img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" height="80%", width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%">
+<img src="https://www.inzhoop.com/img/screenshots/IMG_0013.PNG" height="10%" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0014.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0015.PNG" width="30%">
 
 <img src="https://www.inzhoop.com/img/screenshots/IMG_0016.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0017.PNG" width="30%">  <img src="https://www.inzhoop.com/img/screenshots/IMG_0018.PNG" width="30%">
 
