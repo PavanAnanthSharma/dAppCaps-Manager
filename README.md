@@ -49,7 +49,12 @@ https://github.com/inzhoop-co/LETH
 # Development Instructions
 ## Install Dependencies
 
-Install some stuff lke Node.js and npm  
+Clone our Repository
+```bash
+git clone https://github.com/Qwoyn/dAppCaps-Manager.git
+```
+
+Please install npm   
 ```bash
 https://nodejs.org/dist/v4.2.3/node-v4.2.3.pkg
 ```
@@ -59,12 +64,8 @@ Install ionic and cordova
 sudo npm install -g cordova ionic
 ```
 
-Clone the project
-```bash
-git clone https://github.com/inzhoop-co/LETH.git
-```
-
-Test on browser in localhost:8100
+You can then run the ionic server and test on your browser using 
+localhost:8100
 ```bash
 ionic serve
 ```
