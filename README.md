@@ -1,18 +1,18 @@
-# LΞTH 
-The Only mobile ligthwallet built with Ξthereum community in mind!
+# dAppCaps Manager Wallet GUI 
+The official mobile ligthwallet built on LΞTH for the ETC community!
 
 # About
-LΞTH (Ligth Ξthereum Mobile Wallet) is the first hybrid mobile app to manage an Ethereum wallet built using Ionic framework with the aim to serve the open community.
+QCMW (Qwoyn Caps Manager Wallet) is Qwoyns Ethereum wallet built using the Ionic framework and forked from LΞTH.
 
 # Features
-Thanks to the great job of library of ConsenSys (eth-lightwallet), the app could manage the key-pairs securely on smartphone side without send any password out of the wallet.
-Every transaction could be signed directly with the smartphone and sent to an ethereum node public/private.
+Using the ConsenSys library (eth-lightwallet), our app can manage key-pairs securely on an android mobile device without sending any 
+passwords out of the wallet. This means that every transaction is signed directly by the users mobile device and sent to an ethereum node.
 
-With LETH you could:
+With QCMW you could:
 
-- Create a HD ligthwallet 
+- Create an HD ligthwallet 
 - Manage an Ethereum wallet address
-- Set host node address private/test/public
+- Set host node addresses private/test/public
 - Send / Receive ETH
 - Send / Receive TOKENS
 - List your transactions
@@ -29,15 +29,17 @@ With LETH you could:
 
 # Beta Testers
 Become a BETA tester, install the App and help the community to grow up.
-Visit <a href="http://www.inzhoop.com">Inzhoop website</a>
-Contact to <a href="https://gitter.im/inzhoop-leth/Lobby">Gitter</a>
+Visit <a href="http://www.qwoyn.io/testers">Qwoyns website</a> or
+Contact to us on <a href="https://discord.gg/knZBudV">Discord</a>
 
 # References
 ```
 https://github.com/ConsenSys/eth-lightwallet
+https://github.com/inzhoop-co/LETH
 ```
 
-# Stuff and info for the project (Draft!)
+# Development Instructions
+## Install Dependencies
 
 Install some stuff lke Node.js and npm  
 ```bash
