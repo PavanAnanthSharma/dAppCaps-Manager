@@ -1,0 +1,61 @@
+<ion-view view-title="{{friend.name | strLimit: 10 : 2}}" hide-tabs can-swipe-back="false">
+  <ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button>
+      <span class="badge badge-energized" ng-hide="msgCounter+DMCounter==0"> {{msgCounter + DMCounter}}</span>    
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <a class="button button-clear" ng-href="#/tab/transactions/{{friend.addr}}">
+        <i class="icon ion-ios-list-outline"></i>
+      </a>&nbsp;
+      <a class="button button-clear" ng-if="isOnline" ng-href="#/tab/wallet/{{friend.addr}}">
+        <i class="icon icon-pay"></i>
+      </a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <div class="bar bar-subheader">
+    <span class="item-avatar">
+      {{friend.addr | strLimit: 10 : 10}}
+      <img class="rounded" ng-src="{{friend.icon}}">    
+    </span>
+    <span class="item-note">{{friendBalance | currency:'Ξ ':6}}</span>
+  </div>
+  <ion-content class="has-header has-subheader has-footer has-chat-footer chat" delegate-handle="chatDMScroll">   
+    <div class="message-list has-chat-header has-chat-footer" ng-show="shhEnabled">
+      <div ng-repeat="chat in DMchats | filter:isFromTo | orderBy:'message.time'"
+        class="message-wrapper">
+        <div ng-class="chat.message.from === myidentity ? 'bubble bubble-mine' : 'bubble bubble-other'">
+          <div class="message" ng-class="chat.message.from === myidentity ? 'message-mine' : 'message-other'" on-hold="chooseAction(chat.message)">
+          <img ng-src="{{chat.message.image}}" height="100px" width="auto" ng-if="chat.message.image.length"/>
+          <div class="message-text" ng-if="chat.message.text.length" ng-bind-html="chat.message.text"></div>
+            <span class="message-timestamp">{{chat.message.time | date: 'HH:mm'}}</span>
+        </div>
+          <i class="icon ion-android-checkmark-circle balanced" ng-if="chat.delivered"></i>&nbsp;
+          <i class="icon ion-bug assertive" ng-if="chat.error"></i>&nbsp;
+      </div>     
+    </div>
+  </div>
+  </ion-content>
+  <div class="assertive bar bar-footer bar-stable" ng-show="!shhEnabled || !isOnline">
+    <p>Chat not available :-(  Check connection and host node!</p>
+  </div>
+  <div align-title="left" keyboard-attach class="bar bar-footer bar-stable item-input-inset" ng-show="shhEnabled && isOnline">
+    <button class="button button-clear button-icon button-positive icon ion-ios-plus-empty" ng-click="shareItems()"></button>
+    <label class="item-input-wrapper">
+      <input
+        ng-model="text.message"
+        on-return="sendDirectMessage()"
+        dir="auto"
+        type="text"/>
+    </label>
+    <span ng-if="text.message.length > 0">
+      <button ng-click="sendDirectMessage()" class="button button-clear button-positive">
+          <i class="icon ion-ios-paperplane"></i>
+      </button>
+    </span>
+    <span ng-if="!text.message || text.message.length === 0">
+      <button class="button button-clear button-icon button-positive icon ion-ios-camera-outline" ng-click="getPhoto()"></button>
+      <!--i class="buttons-seperator icon ion-android-more-vertical"></i>
+      <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button-->
+    </span>
+  </div>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-view view-title="{{'ADDRESS_TITLE' | translate}}" class="title">
+  <ion-content class="has-header has-tabs scrollBg" >
+    <div class="button-bar padding">
+      <button class="{{filterWalletAddr}}" ng-click="walletAddress()">Wallet</button>
+      <button class="{{filterShhAddr}}" ng-click="shhAddress()">Identity</button>
+    </div>
+    <div class="list list-borderless">
+      <div class="item item-divider">
+          <p class="text-center">
+            <span class="subdued">{{profileAddress | strLimit: 42 : 3}}</span>
+          </p>
+      </div>
+      <div class="item text-center" ng-click="copyAddr()">
+        <qr text="qrcodeString" type-number="typeNumber" correction-level="correctionLevel" size="size" input-mode="inputMode" image="image"></qr>
+      </div>
+      <div class="item item-input item-select" ng-show="isWalletAddress">
+        <div class="input-label">
+          Request payment
+        </div>
+        <input type="number" pattern="-?\d+(\.\d+)?" placeholder=" 0.00 (optional)" ng-model="amountPayment" ng-change="onAmountChange(amountPayment)" ng-maxlenth="6">
+        <select class="item-select padding" ng-model="unit" ng-required="true" ng-init="unit = options[0]">
+          <option ng-repeat="uni in listUnit" value="{{uni.multiplier}}" ng-selected="$index==0">{{uni.unitName}}</option>
+        </select>
+      </div>
+      <div class="item tabs row"> 
+          <div class="col col-10"></div>         
+          <div class="col col-30"><button class="button button-icon icon ion-ios-email-outline dark" ng-click="shareByEmail()"> email</button></div>
+          <div class="col col-30"><button class="button button-icon icon ion-ios-chatbubble-outline dark" ng-click="shareBySms()"> sms</button></div>    
+          <div class="col col-30"><button class="button button-icon icon icon-chats dark" ng-click="shareByShh()"> chat</button></div>   
+      </div>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

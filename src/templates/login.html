@@ -1,0 +1,45 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">Create Wallet</h1>
+  </ion-header-bar>
+  <ion-content class="has-header scrollBg" >
+    <div class="list">
+      <div class="card button-rigth">
+        <div class="item item-text-wrap">
+          <p>Your keystore seed is</p><br/>
+          <p><b>{{randomSeed}}</b></p><br/>
+          <p class="subdued">Please write it down on paper, you will need it to restore your keystore. Do not let anyone see this seed or they can take your Ether.</p>          
+        </div>
+        <!--button class="button button-icon icon ion-ios-email"  ng-click="sendSeedByEmail()" > Send via Email</button-->
+      </div>
+      <div class="card">          
+        <label class="item item-text-wrap">
+          Choose a strong password to encrypt your wallet.
+          Choose a 4 digit password for rapid access.
+        </label>
+        <form name="login" ng-submit="Login(randomSeed,password,code)">
+          <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="password" name="password" placeholder="8 to 20 digit alphanumeric" required="true" minlength="8" maxlength="20" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Confirm</span>
+            <input type="password" ng-model="confirmPassword" name="confirmPassword" placeholder="enter password again" required="true" minlength="8" maxlength="20" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+          </label>
+          <label class="item item-input padding-bottom">
+            <span class="input-label">Code</span>
+            <input type="password" ng-model="code" name="code" pattern="[0-9]*" maxlength="4" minlength="4" placeholder="4 digit code" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+          </label>
+          <button ng-show="login.$valid && password==confirmPassword" class="button button-block button-energized" type="submit">
+           <i class="icon ion-flag" ng-hide="!login.$valid || confirmPassword!=password"></i>&nbsp;Start
+          </button>
+          <ul class="assertive">
+            <li ng-show="login.password.$dirty && login.password.$invalid ">* Password 8 to 20 digit (1 capital and 1 number at least)</li>
+            <li ng-show="login.confirmPassword.$dirty && password!=confirmPassword">* Password mismatch</li>
+            <li ng-show="login.code.$dirty && login.code.$invalid">* Code not valid</li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

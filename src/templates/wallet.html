@@ -1,0 +1,57 @@
+<ion-view view-title="{{'WALLET_TITLE' | translate}}">
+  <ion-content class="has-header scrollBg" overflow-scroll="false" >
+    <ion-refresher pulling-txt="load" on-refresh="refresh()"></ion-refresher>
+    <div class="list" ng-if="isOnline">
+      <ion-list class="list" can-swipe="true">
+      <ion-item class="item item-divider item-avatar-left  item-icon-right item-avatar-right">
+        <img ng-src="{{logoCoin}}" ng-click="scrollRefresh()"/>
+        <label id="{{idCoin}}"><b>{{balance | currency:symbolCoin+' ':6}} </b><span class="subdued" ">({{balanceExc}})</span></label>
+        <p>
+          <label >{{descCoin}}</label>
+        </p>
+        <span><i class="icon ion-android-more-vertical" ng-click="chooseCoin()"></i>
+        </span>
+      </ion-item>
+      </ion-list>
+      <div class="item">
+        <div class="item item-input item-stacked-label item-icon-right">
+          <span class="input-label">
+            <laberl class="item-floating-label">Address To</label>
+            <laberl class="item-floating-label">{{ENSResolved | strLimit: 15 : 3}}</label>
+            <label class="item-floating-label" ng-show="isFriend(addrTo)">{{isFriend(addrTo) | strLimit: 15 : 3}}</label> 
+            <i class="icon ion-ios-person-outline positive" ng-show="!addrTo.length" ng-click="openFriendsModal()"></i>            
+          </span>
+          <span class="item-note">{{balAddrTo | currency:symbolCoin+' ':6}}</span>
+          <i class="icon ion-ios-personadd-empty positive" ng-show="isFriend(addrTo)=='' && isValidAddr(addrTo)" ng-click="addAddress(addrTo,addrKey)"></i>
+          <input type="text" ng-model="addrTo" placeholder="Type address or use camera to scan" ng-required="true"/>
+        </div>
+        <div class="item item-input item-select">
+             <input type="number" pattern="-?\d+(\.\d+)?" ng-model="amountTo" placeholder="0.00">
+    			<select id="valuta" class="item-select padding" ng-model="unit" ng-init="unit" ng-change="unitChanged(unit)">
+    				<option ng-repeat="uni in listUnit" value="{{uni.multiplier}}" ng-selected="$index==0">{{uni.unitName}}</option>
+    			</select>
+        </div>
+        <div class="list">
+          <div class="item range range-positive">
+            <span class="item-note">fee {{feeLabel}} {{symbolFee}}</span>
+            <input type="range" ng-model="fee"  min="{{minFee}}" max="{{maxFee}}" step="{{step}}" value="{{fee}}" ng-init="fee" ng-change="setFee(fee)">
+          </div>
+          <button class="button button-clear icon ion-ios-calculator" ng-click="allBalance()"> entire balance</button>
+        </div>
+        <button ng-disabled="!unit || !amountTo>0 || !isValidAddr(addrTo)" class="button button-block button-energized" ng-click="confirmSend(addrTo,amountTo,unit,idCoin)"><i class="icon ion-paper-airplane"></i> Send 
+        </button>
+        </div> 
+        <div class="item tabs row"> 
+          <div class="col col-10"></div>         
+          <div class="col col-30">
+            <button class="button button-icon icon ion-ios-list-outline dark" ng-disabled="!transactions.length" ng-click="listTransaction()"> transactions</button>
+          </div>
+          <div class="col col-30"></div>    
+          <div class="col col-30"></div>   
+        </div>   
+    </div>
+    <div class="item-image">
+      <img src="img/offline.png" width="50%" ng-if="!isOnline"/>
+    </div> 
+  </ion-content>
+</ion-view>

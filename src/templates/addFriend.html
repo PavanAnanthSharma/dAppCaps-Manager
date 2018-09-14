@@ -1,0 +1,38 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-assertive">
+    <button  class="button button-clear" ng-click="closeSaveAddressModal()" ng-hide="fromAddressBook">
+      <i class="icon ion-ios-close"></i>
+    </button>
+    <div class="h1 title">Friend {{name | strLimit: 5 : 5}}</div>
+    <button menu-toggle="right" class="button button-clear" on-touch="scanAddr()">
+      <i class="icon ion-ios-camera-outline"></i>
+    </button>
+  </ion-header-bar>
+  <ion-scroll class="has-header" padding="'true'">
+    <div class="list list-borderless">
+      <div class="item">
+        <form ng-submit="saveAddr(name,addr,idkey,comment)">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Name</span>
+            <input type="text" ng-model="name" placeholder="Digit a Name">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Wallet Address (scan QRCode)</span>
+            <input type="text" ng-model="addr" readonly placeholder="Wallet Address from QRCode" ng-valid>            
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Identity Address (scan QRCode)</span>
+            <input type="text" ng-model="idkey" readonly placeholder="Identity Address from QRCode" ng-valid>            
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Comment</span>
+            <input type="text" ng-model="comment" placeholder="Comment">
+          </label> 
+          <button class="button button-block button-energized" type="submit">Save</button>
+          <p>Scan QRCode from Leth to add friend manually</p>
+          <p>You can add friends "holding on" any message</p>         
+        </form>
+      </div>
+    </div>
+  </ion-scroll>
+</ion-modal-view>

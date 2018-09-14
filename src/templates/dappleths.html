@@ -1,0 +1,86 @@
+<ion-view view-title="DappCaps" can-swipe-back="false">
+  <ion-content class="has-header has-tabs scrollBg" >
+    <ion-slide-box auto-play="true" does-continue="false" show-pager="false">
+      <ion-slide ng-repeat="banner in banners track by $index">
+        <div>
+          <a href="#" ng-click="goToUrl(banner.Url)">
+            <img ng-src="{{banner.image}}" height="150"/>
+          </a>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <div class="button-bar padding">
+      <button class="{{filterStoreCoins}}" ng-click="readCoinsList()">Tokens</button>
+      <button class="{{filterStoreApps}}" ng-click="readDappsList()">ÐAppleths</button>
+    </div>
+
+    <div class="item-image">
+      <img src="img/offline.png" width="50%" ng-if="!isOnline"/>
+    </div>
+    <!--div class="categoryBox" ng-if="isDapp">
+      <div class="categoryHead">Factory - self deployable dapps
+        <span class="item-note">#1</span>
+      </div>
+      <ul class="appSlider">
+        <li class="appBox">
+          <a class="wrapper" ng-click="deployTest()">
+            <img class="appIco" ng-src="/img/dappbuilder.png"/>
+            <h2 class="title">Greet maker</h2>
+            <p class="description">Your custom greet</p>
+            <h6 class="author">by Inzhoop</h6> 
+          </a>
+        </li>
+      </ul>
+    </div-->
+    <div class="text-center dark" ng-show="!listApps.length" ng-if="isDapp"><p>No Dappleth available :-(</p></div>
+
+    <div class="categoryBox" ng-repeat="cat in listCategory" ng-if="isDapp && cat.List.length && isOnline">
+
+      <div class="categoryHead">{{cat.Name}} 
+        <span class="item-note">#{{cat.List.length}}</span>
+      </div>
+      <ul class="appSlider">
+        <li class="appBox" ng-repeat="dapp in listApps | inCategory:cat.List:'GUID'">
+          <a class="wrapper" ng-href="&#35;/tab/dappleth-run/{{dapp.GUID}}">
+            <img class="appIco" ng-src="{{getDappPath(dapp.GUID,dapp.Logo.Full)}}"/>
+            <h2 class="title">{{dapp.Name}}</h2>
+            <p class="description">{{dapp.Description.Title}}</p>
+            <h6 class="author">by {{dapp.Company}}</h6> 
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ion-list ng-show="isCoin" ng-if="isOnline">
+      <ion-item class="item item-avatar-left item-icon-right"  ng-repeat="coin in listTokens track by $index" type="item-text-wrap" on-hold="showCustomTokenInfo(coin)">
+          <img ng-src="{{coin.Logo}}"/>
+            <h2>{{coin.Name}}</h2>
+            <p>{{coin.Abstract}}</p>
+            <h6>by {{coin.Company}}</h6>
+            <ion-spinner icon="ripple" class="icon spinner-positive" ng-show="coin.Progress"></ion-spinner>
+            <i class="icon ion-ios-checkmark-outline balanced" ng-hide="!coin.Installed || coin.Progress"></i>  
+            <i class="icon ion-ios-cloud-download-outline positive" ng-hide="coin.Installed || coin.Progress || coin.Custom" ng-click="installCoin(coin)"></i>  
+            <i class="icon ion-ios-circle-outline positive" ng-show="!coin.Installed && coin.Custom && !coin.Progress" ng-click="installCoin(coin)"></i> 
+            <ion-option-button style="padding-top: 40px; font-size: 12px;" class="button-energized" ng-show="coin.Custom" ng-click="openFriendsModal(coin)">
+              <i class="icon ion-share"></i>
+              <span>Share</span>
+            </ion-option-button>
+            <ion-option-button style="padding-top: 40px; font-size: 12px;" class="button-assertive" ng-show="coin.Installed" ng-click="uninstallCoin(coin)">
+              <i class="icon ion-ios-trash-outline"></i>
+              <span>Unset</span>
+            </ion-option-button>
+            <ion-option-button style="padding-top: 40px; font-size: 12px;" class="button-dark" ng-show="coin.Custom" ng-click="removeCustomToken(coin)">
+              <i class="icon ion-backspace-outline"></i>
+              <span>Delete</span>
+            </ion-option-button>
+      </ion-item>
+      <ion-item class="item item-avatar-left item-icon-right" ng-click="loadCustomToken()">
+            <img ng-src="img/eth_coin.png"/>
+            <h2>{{'CUSTOM_TOKEN' | translate}}</h2>
+            <p>{{'ADD_CUSTOM_TOKEN' | translate}}</p>
+            <i class="icon ion-ios-plus-outline positive"></i>
+      </ion-item>
+    </ion-list>  
+    </ion-content>
+</ion-view>
+
+
