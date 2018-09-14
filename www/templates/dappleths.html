@@ -1,4 +1,4 @@
-<ion-view view-title="DappCaps" can-swipe-back="false">
+<ion-view view-title="" can-swipe-back="false">
   <ion-content class="has-header has-tabs scrollBg" >
     <ion-slide-box auto-play="true" does-continue="false" show-pager="false">
       <ion-slide ng-repeat="banner in banners track by $index">
@@ -10,45 +10,7 @@
       </ion-slide>
     </ion-slide-box>
     <div class="button-bar padding">
-      <button class="{{filterStoreCoins}}" ng-click="readCoinsList()">Tokens</button>
-      <button class="{{filterStoreApps}}" ng-click="readDappsList()">ÐAppleths</button>
-    </div>
-
-    <div class="item-image">
-      <img src="img/offline.png" width="50%" ng-if="!isOnline"/>
-    </div>
-    <!--div class="categoryBox" ng-if="isDapp">
-      <div class="categoryHead">Factory - self deployable dapps
-        <span class="item-note">#1</span>
-      </div>
-      <ul class="appSlider">
-        <li class="appBox">
-          <a class="wrapper" ng-click="deployTest()">
-            <img class="appIco" ng-src="/img/dappbuilder.png"/>
-            <h2 class="title">Greet maker</h2>
-            <p class="description">Your custom greet</p>
-            <h6 class="author">by Inzhoop</h6> 
-          </a>
-        </li>
-      </ul>
-    </div-->
-    <div class="text-center dark" ng-show="!listApps.length" ng-if="isDapp"><p>No Dappleth available :-(</p></div>
-
-    <div class="categoryBox" ng-repeat="cat in listCategory" ng-if="isDapp && cat.List.length && isOnline">
-
-      <div class="categoryHead">{{cat.Name}} 
-        <span class="item-note">#{{cat.List.length}}</span>
-      </div>
-      <ul class="appSlider">
-        <li class="appBox" ng-repeat="dapp in listApps | inCategory:cat.List:'GUID'">
-          <a class="wrapper" ng-href="&#35;/tab/dappleth-run/{{dapp.GUID}}">
-            <img class="appIco" ng-src="{{getDappPath(dapp.GUID,dapp.Logo.Full)}}"/>
-            <h2 class="title">{{dapp.Name}}</h2>
-            <p class="description">{{dapp.Description.Title}}</p>
-            <h6 class="author">by {{dapp.Company}}</h6> 
-          </a>
-        </li>
-      </ul>
+      <button class="{{filterStoreCoins}}" ng-click="readCoinsList()">Your Collectible Tokens</button>
     </div>
     <ion-list ng-show="isCoin" ng-if="isOnline">
       <ion-item class="item item-avatar-left item-icon-right"  ng-repeat="coin in listTokens track by $index" type="item-text-wrap" on-hold="showCustomTokenInfo(coin)">
