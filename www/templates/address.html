@@ -15,7 +15,7 @@
       </div>
       <div class="item item-input item-select" ng-show="isWalletAddress">
         <div class="input-label">
-          Request payment
+          Request caps
         </div>
         <input type="number" pattern="-?\d+(\.\d+)?" placeholder=" 0.00 (optional)" ng-model="amountPayment" ng-change="onAmountChange(amountPayment)" ng-maxlenth="6">
         <select class="item-select padding" ng-model="unit" ng-required="true" ng-init="unit = options[0]">
